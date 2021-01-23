@@ -111,6 +111,8 @@ firefox exploit.html &
 
 Running the exploit.html twice will upload our PoC
 
+![PoC](https://user-images.githubusercontent.com/33517160/105569359-1373f500-5d52-11eb-9388-692b956b2a7c.png)
+
 going to (http://MACHINE_IP/content/inc/ads/hacked.php), if you can see the phpinfo() page
 that means your exploit worked !
 ```
