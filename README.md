@@ -5,9 +5,9 @@
 
 ## Scanning
 ```
-nmap -T4 -p- -A -sC -Pn 10.10.207.204
+nmap -T4 -p- -A -sC -Pn MACHINE_IP
 Starting Nmap 7.80 ( https://nmap.org ) at 2021-01-22 19:12 EST
-Nmap scan report for 10.10.207.204
+Nmap scan report for MACHINE_IP
 Host is up (0.15s latency).
 Not shown: 65532 closed ports
 PORT      STATE    SERVICE VERSION
@@ -30,7 +30,7 @@ lets check what directories do we have:
 ```
 /
 
-gobuster dir -u 10.10.207.204 -w /usr/share/wordlists/dirb/common.txt
+gobuster dir -u MACHINE_IP -w /usr/share/wordlists/dirb/common.txt
 
 /.hta (Status: 403)
 /.htaccess (Status: 403)
@@ -43,7 +43,7 @@ gobuster dir -u 10.10.207.204 -w /usr/share/wordlists/dirb/common.txt
 
 /content
 
-gobuster dir -u 10.10.207.204/content -w /usr/share/wordlists/dirb/common.txt
+gobuster dir -u MACHINE_IP/content -w /usr/share/wordlists/dirb/common.txt
 
 /.hta (Status: 403)
 /.htaccess (Status: 403)
@@ -59,7 +59,7 @@ gobuster dir -u 10.10.207.204/content -w /usr/share/wordlists/dirb/common.txt
 ```
 
 > By taking a look at the source code of the `/content`
-> we can see that we have a js linked `http://10.10.207.204/content/js/SweetRice.js`
+> we can see that we have a js linked `http://MACHINE_IP/content/js/SweetRice.js`
 > by checking the js file we see that the `cms: SweetRice version is 0.5.4`
 
 
@@ -87,7 +87,7 @@ the passwd looks like an md5 hash we can crack it at (https://crackstation.net/)
 passwd : Password123
 ```
 
-- Looking at the directiries we see the login page at `http://10.10.207.204/content/as/`
+- Looking at the directiries we see the login page at `http://MACHINE_IP/content/as/`
 - Logging in gave us nothing , so lets check out the other exploit it will allow us to execute code , it means we can get a reverse shell
 
 ```
@@ -111,7 +111,7 @@ firefox exploit.html &
 
 Running the exploit.html twice will upload our PoC
 
-going to (http://10.10.207.204/content/inc/ads/hacked.php), if you can see the phpinfo() page
+going to (http://MACHINE_IP/content/inc/ads/hacked.php), if you can see the phpinfo() page
 that means your exploit worked !
 ```
 
