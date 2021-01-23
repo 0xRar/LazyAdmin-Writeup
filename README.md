@@ -73,6 +73,8 @@ SweetRice 1.5.1 - Backup Disclosure /content/inc/mysql_backup/ (https://www.expl
 SweetRice 1.5.1 - Cross-Site Request Forgery / PHP Code Execution (https://www.exploit-db.com/exploits/40700)
 ```
 
+![dir](https://user-images.githubusercontent.com/33517160/105569406-6188f880-5d52-11eb-8cb9-4f5901c5ae3c.png)
+
 - After downloading the mysql backup it seems like the file type is php script 
 `file mysql_bakup_20191129023059-1.5.1.sql`
 
