@@ -132,8 +132,6 @@ we delete it and paste in our php shell,
  than firefox exploit.html again 
 ```
 
-![shell uploaded](https://user-images.githubusercontent.com/33517160/105569454-b167bf80-5d52-11eb-862b-3dc9b514ebf1.png)
-
 - Lets listen via nc `nc -lnvp 4444`
 - We can see our shell is uploaded lets run it by going to `/content/inc/ads/shellname.php`
 
