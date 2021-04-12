@@ -86,7 +86,7 @@ username : manager
 
 the passwd looks like an md5 hash we can crack it at (https://crackstation.net/)
 
-passwd : Password123
+passwd: 
 ```
 
 - Looking at the directiries we see the login page at `http://MACHINE_IP/content/as/`
